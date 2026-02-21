@@ -5,9 +5,9 @@ const books = {
     4: {"author": "Unknown", "title": "The Epic Of Gilgamesh", "reviews": [{"username": "user1", "review": "Ancient treasure!"}, {"username": "user2", "review": "Fascinating!"}], "isbn": "isbn-4567890123"},
     5: {"author": "Unknown", "title": "The Book Of Job", "reviews": [{"username": "user1", "review": "Profound wisdom!"}, {"username": "user2", "review": "Deep insights!"}], "isbn": "isbn-5678901234"},
     6: {"author": "Unknown", "title": "One Thousand and One Nights", "reviews": [{"username": "user1", "review": "Arabian Nights delight!"}, {"username": "user2", "review": "Entertaining!"}], "isbn": "isbn-6789012345"},
-    7: {"author": "Unknown", "title": "Nj\u00e1l's Saga", "reviews": [{"username": "user1", "review": "Nordic saga!"}, {"username": "user2", "review": "Historically rich!"}], "isbn": "isbn-7890123456"},
+    7: {"author": "Unknown", "title": "Njál's Saga", "reviews": [{"username": "user1", "review": "Nordic saga!"}, {"username": "user2", "review": "Historically rich!"}], "isbn": "isbn-7890123456"},
     8: {"author": "Jane Austen", "title": "Pride and Prejudice", "reviews": [{"username": "user1", "review": "Classic romance!"}, {"username": "user2", "review": "Timeless love!"}], "isbn": "isbn-8901234567"},
-    9: {"author": "Honor\u00e9 de Balzac", "title": "Le P\u00e8re Goriot", "reviews": [{"username": "user1", "review": "French masterpiece!"}, {"username": "user2", "review": "Compelling plot!"}], "isbn": "isbn-9012345678"},
+    9: {"author": "Honoré de Balzac", "title": "Le Père Goriot", "reviews": [{"username": "user1", "review": "French masterpiece!"}, {"username": "user2", "review": "Compelling plot!"}], "isbn": "isbn-9012345678"},
     10: {"author": "Samuel Beckett", "title": "Molloy, Malone Dies, The Unnamable, the trilogy", "reviews": [{"username": "user1", "review": "Existential journey!"}, {"username": "user2", "review": "Philosophical depth!"}], "isbn": "isbn-0123456789"}
 };
 

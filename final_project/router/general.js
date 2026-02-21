@@ -1,5 +1,6 @@
 const express = require('express');
-let books = require("./booksdb.js");
+// let books = require("./booksdb.js");
+const books = require("./booksdb.js");
 let isValid = require("./auth_users.js").isValid;
 let users = require("./auth_users.js").users;
 const public_users = express.Router();
@@ -43,14 +44,21 @@ public_users.get('/users', function (req, res) {
 // Get book details based on ISBN
 public_users.get('/isbn/:isbn', function (req, res) {
     const isbn = req.params.isbn;
-    const book = Object.values(books).find(book => book.isbn === isbn);
-
+    console.log(`Searching for book with ISBN: isbn-${isbn}`);  // Log the ISBN
+    
+    // Use .includes() for partial matching
+    const book = Object.values(books).find(book => book.isbn.includes(isbn)); // This checks for matching ISBN parts
+    
+    console.log('Found book:', book);  // Log the found book (or undefined)
+    
     if (book) {
-        res.send(JSON.stringify(book, null, 4));
+        // If the book is found, send the book details as JSON
+        res.json(book);
     } else {
-        res.send(`Book with ISBN ${isbn} not found.`);
+        // If the book isn't found, send a 404 error with the message
+        res.status(404).json({ message: `Book with ISBN ${isbn} not found.` });
     }
-}); 
+});
 
 // Get book details based on author
 public_users.get('/author/:author', function (req, res) {
@@ -76,15 +84,19 @@ public_users.get('/title/:title', function (req, res) {
     }
 });
 
-//  Get book review
+// Get book review
 public_users.get('/review/:isbn', function (req, res) {
     const isbn = req.params.isbn;
-    const book = Object.values(books).find(book => book.isbn === isbn);
-    const review = book.reviews;
+    
+    // Match the ISBN properly
+    const book = Object.values(books).find(book => book.isbn.includes(isbn)); // Use .includes() for partial matching
+
     if (book) {
-        res.send(JSON.stringify(review, null, 4));
+        // If the book is found, send the reviews as JSON
+        res.json(book.reviews);
     } else {
-        res.send(`Book with ISBN ${isbn} not found.`);
+        // If the book isn't found, return a clear message
+        res.status(404).json({ message: `Book with ISBN ${isbn} not found.` });
     }
 });
 
